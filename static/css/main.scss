@@ -1,0 +1,61 @@
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "footer";
+@import "header";
+
+@font-face {
+    font-family: 'hero-regular';
+    src: local('hero-regular'),
+         url('../fonts/hero-regular.ttf') format("truetype");
+}
+
+.button:focus
+{
+    font-size: 13px;
+    color:orange;
+}
+
+.h1-gradient {
+    font-size: 40px;
+    background: -webkit-linear-gradient(45deg, rgba(33,86,147,1) 0%, rgba(237,110,33,1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.h2-gradient {
+    font-size: 30px;
+    background: -webkit-linear-gradient(45deg, rgba(33,86,147,1) 0%, rgba(237,110,33,1) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+p {
+    font-size: 20px;
+}
+
+#container {
+    padding: 30px;
+}
+
+figcaption {
+    font-family: hero-regular;
+    color: rgb(19, 19, 19);
+}
+
+.text-hero {
+    font-family: hero-regular;
+    color: $light;
+}
+
+.errorlist {
+    color: $danger;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#block
+{
+   width: 200px;
+   margin: 0 auto;
+}

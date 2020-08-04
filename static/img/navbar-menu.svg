@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="menu dots BO.svg"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   width="24.0px"
+   height="24.0px"
+   viewBox="0 0 24.0 24.0"
+   version="1.1"
+   id="SVGRoot">
+  <defs
+     id="defs190">
+    <linearGradient
+       id="linearGradient3707"
+       inkscape:collect="always">
+      <stop
+         id="stop3703"
+         offset="0"
+         style="stop-color:#1a7399;stop-opacity:1;" />
+      <stop
+         id="stop3705"
+         offset="1"
+         style="stop-color:#ed6e21;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient
+       gradientUnits="userSpaceOnUse"
+       y2="19"
+       x2="16"
+       y1="12"
+       x1="2.4336438"
+       id="linearGradient3709"
+       xlink:href="#linearGradient3707"
+       inkscape:collect="always" />
+  </defs>
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="0"
+     inkscape:window-height="943"
+     inkscape:window-width="1252"
+     showgrid="true"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="px"
+     inkscape:cy="9.161149"
+     inkscape:cx="20.709457"
+     inkscape:zoom="11.2"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base">
+    <inkscape:grid
+       type="xygrid"
+       id="grid199" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata193">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <g
+       style="fill-opacity:1;fill:url(#linearGradient3709)"
+       id="g1771">
+      <circle
+         r="1.1365986"
+         cy="3.222944"
+         cx="3.6965327"
+         id="path63"
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1" />
+      <circle
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1"
+         id="path63-3"
+         cx="3.5702424"
+         cy="11.999993"
+         r="1.1365986" />
+      <circle
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1"
+         id="path63-5"
+         cx="3.822823"
+         cy="20.777056"
+         r="1.1365986" />
+      <circle
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1"
+         id="path63-2"
+         cx="12"
+         cy="3.222944"
+         r="1.1365986" />
+      <circle
+         r="1.1365986"
+         cy="11.999993"
+         cx="11.87371"
+         id="path63-3-3"
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1" />
+      <circle
+         r="1.1365986"
+         cy="20.777056"
+         cx="12.126289"
+         id="path63-5-9"
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1" />
+      <circle
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1"
+         id="path63-9"
+         cx="20.303469"
+         cy="3.222944"
+         r="1.1365986" />
+      <circle
+         r="1.1365986"
+         cy="11.999993"
+         cx="20.177179"
+         id="path63-3-7"
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1" />
+      <circle
+         r="1.1365986"
+         cy="20.777056"
+         cx="20.429758"
+         id="path63-5-0"
+         style="fill:url(#linearGradient3709);fill-rule:evenodd;stroke-width:0.500077;fill-opacity:1" />
+    </g>
+  </g>
+</svg>

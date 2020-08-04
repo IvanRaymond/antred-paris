@@ -1,0 +1,35 @@
+.gradient-footer {
+    background: rgb(33,86,147);
+    background: linear-gradient(148deg, rgba(33,86,147,1) 2%, rgba(237,110,33,1) 100%);
+}
+
+.footer-logo {
+    width: 30px;
+    height: 30px;
+}
+
+.fa {
+    color: $light;
+}
+
+html{ height:100%; }
+body{ min-height:100%; padding:0; margin:0; position:relative; }
+header{ height:50px; }
+
+/* Trick: */
+body {
+  position: relative;
+}
+
+body::after {
+  content: '';
+  display: block;
+  height: 60px; /* Set same as footer's height */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}

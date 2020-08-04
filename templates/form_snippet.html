@@ -1,0 +1,18 @@
+<form method='POST'> {% csrf_token %}
+    {% for field in form %}
+    {% if field.label == "Première Année ?" %}
+    <div class="form-check">
+        {{ field.errors }}
+        <input type="hidden" name="first_year" class="form-check-input" value="off" id="id_first_year">
+        {{ field }}
+        <label class="form-check-label" for="id_first_year">Première année en France ?</label>
+    </div>
+    {% else %}
+    <div class="form-group floating-label-form-group controls border-bottom">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    <input class="btn btn-light btn-text" type="submit" value='{{ button_label }}'/>
+</form>

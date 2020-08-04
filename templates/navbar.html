@@ -1,0 +1,71 @@
+{% load static %}
+<div style="position:relative; z-index:10">
+    <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm">
+
+
+            <!-- Brand -->
+            <a class="navbar-brand d-lg-none d-xl-none d-md-none" href="#">
+                <img src="{% static 'img/navbar-logo.png' %}" alt="logo" style="width: 80px;">
+            </a>
+
+            <!-- Toggler/collapsibe Button -->
+            <button class="ml-auto navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <img src="{% static 'img/navbar-menu.svg' %}" alt="menu" class="nav-menu">
+            </button>
+
+
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="{% url 'pages:home' %}" class="nav-link">
+                        <figure class="nav-strip-figure">
+                            <img src="{% static 'img/home.svg' %}" alt="" class="nav-strip-figure-image">
+                            <figcaption class="has-text-weight-normal hero-text caption">Acceuil</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="nav justify-content-center">
+                    <a href="{% url 'events:event' %}" class="nav-link">
+                        <figure class="nav-strip-figure">
+                            <img src="{% static 'img/event.svg' %}" alt="" class="nav-strip-figure-image">
+                            <figcaption class="has-text-weight-normal hero-text caption">Événements</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="nav justify-content-center">
+                    <a href="{% url 'info' %}" class="nav-link">
+                        <figure class="nav-strip-figure">
+                            <img src="{% static 'img/info.svg' %}" alt="" class="nav-strip-figure-image">
+                            <figcaption class="has-text-weight-normal hero-text caption">Informations</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="nav justify-content-center">
+                    <a href="{% url 'members:members' %}" class="nav-link">
+                        <figure class="nav-strip-figure">
+                            <img src="{% static 'img/join.svg' %}" alt="" class="nav-strip-figure-image">
+                            <figcaption class="has-text-weight-normal hero-text caption">Rejoindre</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="nav justify-content-center">
+                    <a href="{% url 'pages:contact' %}" class="nav-link">
+                        <figure class="nav-strip-figure">
+                            <img src="{% static 'img/contact.svg' %}" alt="" class="nav-strip-figure-image">
+                            <figcaption class="has-text-weight-normal hero-text caption">Contact</figcaption>
+                        </figure>
+                    </a>
+                </li>
+                <li class="nav justify-content-center">
+                    <a href="{% url 'pages:about_us' %}" class="nav-link">
+                        <figure class="nav-strip-figure">
+                            <img src="{% static 'img/us.svg' %}" alt="" class="nav-strip-figure-image">
+                            <figcaption class="has-text-weight-normal hero-text caption">L'association</figcaption>
+                        </figure>        
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

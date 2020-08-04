@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+{% if message_sent %}
+<div class='heading'>
+    <h1 class="h1-gradient">Merci {{ message_name }}!</h1>
+    <p class="hero-text">Nous avons bien reçu ton message.</p>
+</div>
+{% endif %}
+
+<div class='heading'>
+    <h2 class="h2-gradient">Contactez-nous</h2>
+</div>
+
+{% include 'form_snippet.html' %}
+{% endblock %}
