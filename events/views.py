@@ -14,6 +14,6 @@ def event_detail_view(request, id):
 def event_list_view(request):
     queryset = Event.objects.all()
     context = {
-        'object_list': queryset
+        'events': queryset
     }
     return render(request, "event.html", context)
