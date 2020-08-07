@@ -2,7 +2,7 @@ from django import forms
 from django.core.validators import RegexValidator
 from .models import Contact
 
-alpha = RegexValidator(r"^[a-zA-Z']*$", 'Les charactères numériques sont interdit.')
+alpha = RegexValidator(r"^[A-zÀ-ž\s']*$", 'Les charactères numériques sont interdit.')
 alphanumeric = RegexValidator(r"^['0-9a-zA-Z]*$", 'Charactères interdit')
 
 
@@ -17,7 +17,7 @@ class ContactForm(forms.ModelForm):
                 "placeholder":"Nom",
                 "oninvalid": "this.setCustomValidity('Ce champ est obligatoire')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0"
+                "class": "form-control"
             }
         )
     )
@@ -31,7 +31,7 @@ class ContactForm(forms.ModelForm):
                 "placeholder": "Mail",
                 "oninvalid": "this.setCustomValidity('Entrer une adresse email')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0"
+                "class": "form-control"
             }
         )
     )
@@ -44,7 +44,7 @@ class ContactForm(forms.ModelForm):
                 "placeholder": "Message",
                 "oninvalid": "this.setCustomValidity('Ce champ est obligatoire')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0",
+                "class": "form-control",
                 "rows": "5"
             }
         )

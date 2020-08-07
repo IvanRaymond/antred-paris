@@ -13,14 +13,14 @@ def members_join_view(request):
             # fetch first_year checkbox value
             # if ticked display additionnal message that payment is optional and do a form.save()
             #form.save()
-
-        first_year = request.POST['first_year']
+        first_year = False
+        if request.POST.get('div_id_first_year', True):
+            first_year = 'on'
         status = request.POST['status']
-
-        print(first_year)
 
         if first_year == 'on' and status == 'étudiant':
 
+            # Uncomment on production
             #form.save()
             return render(request,"payment_member.html",{
                 'first_year': True

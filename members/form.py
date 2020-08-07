@@ -2,7 +2,7 @@ from django import forms
 from django.core.validators import RegexValidator
 from .models import Member
 
-alpha = RegexValidator(r"^[a-zA-Z']*$", 'Les caractères numériques sont interdit.')
+alpha = RegexValidator(r"^[A-zÀ-ž\s']*$", 'Les caractères numériques sont interdit.')
 alphanumeric = RegexValidator(r"^['0-9a-zA-Z]*$", 'Caractères interdit.')
 numeric = RegexValidator(r"^[0-9+-]*$", 'Les caractères alpha sont interdit.')
 
@@ -25,7 +25,8 @@ class MemberForm(forms.ModelForm):
                 "placeholder":"Nom",
                 "oninvalid": "this.setCustomValidity('Ce champ est obligatoire')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0"
+                "class": "form-control",
+                "pattern": "([A-zÀ-ž\s']){2,}"
             }
         )
     )
@@ -38,7 +39,7 @@ class MemberForm(forms.ModelForm):
                 "placeholder": "Mail",
                 "oninvalid": "this.setCustomValidity('Ce champ est obligatoire')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0"
+                "class": "form-control"
             })
     )
 
@@ -51,7 +52,7 @@ class MemberForm(forms.ModelForm):
                 "placeholder": "Téléphone",
                 "oninvalid": "this.setCustomValidity('Entré une information valide')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0"
+                "class": "form-control",
             })
     )
 
@@ -65,7 +66,7 @@ class MemberForm(forms.ModelForm):
             attrs={
                 "oninvalid": "this.setCustomValidity('Choisissez une option dans la liste')",
                 "oninput": "setCustomValidity('')",
-                "class": "form-control border-0"
+                "class": "form-control"
             })
         )
 
@@ -74,7 +75,7 @@ class MemberForm(forms.ModelForm):
         required=False,
         widget=forms.CheckboxInput(
             attrs={
-                "class": "form-check-input"
+                "class": "form-check-input",
             }
         )
     )
