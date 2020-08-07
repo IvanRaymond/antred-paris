@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # downloaded
-    'paypal.standard.ipn',
-    
+
     # own
     'pages',
     'events',
@@ -83,14 +81,14 @@ WSGI_APPLICATION = 'antredSite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-MONGO_PRIVATE_KEY = os.environ['MONGO_PRIVATE_KEY']
+MONGO_PRIVATE_KEY = os.environ['MONGO_KEY']
 
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
         'CLIENT': {
-            'host': 'mongodb+srv://Ivan:' + MONGO_PRIVATE_KEY + '@antred-cluster.sm4io.azure.mongodb.net/test',
-            'username': 'Ivan',
+            'host': 'mongodb+srv://admin:' + MONGO_PRIVATE_KEY + '@antred-cluster.sm4io.azure.mongodb.net/test',
+            'username': 'admin',
             'password': MONGO_PRIVATE_KEY,
             'authMechanism': 'SCRAM-SHA-1'
         }
@@ -142,12 +140,6 @@ STATICFILES_DIRS = [
 # Media Root
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-
-
-# django-paypal settings
-PAYPAL_RECEIVER_EMAIL = 'sonalis.packtpub-antredparis@gmail.com'
-PAYPAL_TEST = True
 
 
 # myaccount.google.com/lesssecureapps
