@@ -9920,12 +9920,11 @@ div.header-logo {
   }
 }
 
-nav.navbar {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
 .nav-strip-figure {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
   display: grid;
   place-items: center;
 }
@@ -9980,6 +9979,43 @@ nav.navbar {
 ul {
   display: table;
   margin: 0 auto;
+}
+
+@media (min-width: 48em) {
+  a.nav-link {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 64em) {
+  a.nav-link {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 48em) {
+  li.nav-item {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 160em) {
+  li.nav-item {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+}
+
+nav.navbar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media (min-width: 48em) {
+  nav.navbar {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }
 
 .gradient-footer {
