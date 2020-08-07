@@ -9909,11 +9909,31 @@ h3 {
     border-color: #dee2e6;
   }
 }
+div.header-logo {
+  display: none;
+}
+@media (min-width: 48em) {
+  div.header-logo {
+    display: grid;
+    place-items: center;
+    margin: 5px;
+  }
+}
+
+nav.navbar {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+@media (min-width: 48em) {
+  nav.navbar {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
 .nav-strip-figure {
-  vertical-align: top;
-  display: inline-block;
-  text-align: center;
-  width: 120px;
+  display: grid;
+  place-items: center;
 }
 
 .nav-strip-figure-image {
@@ -9925,14 +9945,35 @@ h3 {
   display: block;
 }
 
-.nav {
-  white-space: nowrap;
-  overflow-x: auto;
-}
-
 .nav li {
   display: inline-block;
   float: none;
+}
+
+@media (min-width: 48em) {
+  a.nav-link {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+@media (min-width: 64em) {
+  a.nav-link {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 48em) {
+  li.nav-item {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+@media (min-width: 160em) {
+  li.nav-item {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
 }
 
 .navbar-brand {
@@ -10003,7 +10044,7 @@ body {
   font-size: 1em;
   line-height: 1.5;
 }
-@media (min-width: 43em) {
+@media (min-width: 48em) {
   body {
     font-size: 1.1em;
     line-height: 1.65;
@@ -10035,7 +10076,7 @@ body {
   padding: 0;
   margin: 0 2%;
 }
-@media (min-width: 43em) {
+@media (min-width: 48em) {
   #container {
     margin: 0 4%;
   }
@@ -10060,6 +10101,10 @@ body {
   font-family: "hero-regular";
   src: local("hero-regular"), url("../fonts/hero-regular.ttf") format("truetype");
 }
+header {
+  margin-bottom: 50px;
+}
+
 .button:focus {
   font-size: 13px;
   color: orange;

@@ -1,8 +1,26 @@
+div.header-logo {
+    display: none;
+
+    @media #{$mq-small} {
+        display: grid;
+        place-items: center;
+        margin: 5px;
+    }
+}
+
+nav.navbar {
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    @media #{$mq-small} {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
 .nav-strip-figure {
-    vertical-align: top;
-    display: inline-block;
-    text-align: center;
-    width: 120px;
+    display: grid;
+    place-items: center;
 }
 
 .nav-strip-figure-image {
@@ -13,14 +31,31 @@
     display: block;
 }
 
-.nav {
-    white-space: nowrap;
-    overflow-x: auto;
-}
-
 .nav li {
     display: inline-block;
     float: none;
+}
+
+a.nav-link {
+    @media #{$mq-small} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    @media #{$mq-medium} {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+li.nav-item {
+    @media #{$mq-small} {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+    @media #{$mq-xxlarge} {
+        padding-left: 70px;
+        padding-right: 70px;
+    }
 }
 
 .navbar-brand {

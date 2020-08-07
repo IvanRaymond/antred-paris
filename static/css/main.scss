@@ -7,7 +7,7 @@ $blackcoral: #5E6472;
 
 // Breakpoints
 $bp-xsmall: 22em; // 350 px
-$bp-small: 43em; // 700px
+$bp-small: 48em; // 768px
 $bp-medium: 64em; // 1024px
 $bp-large: 85.375em; // 1366px
 $bp-xlarge: 120em; // 1920px
@@ -85,6 +85,10 @@ body {
     font-family: 'hero-regular';
     src: local('hero-regular'),
          url('../fonts/hero-regular.ttf') format("truetype");
+}
+
+header {
+  margin-bottom: 50px;
 }
 
 .button:focus
