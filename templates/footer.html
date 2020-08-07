@@ -1,36 +1,27 @@
 {% load static %}
 
-
-<!-- Footer -->
-<footer class="footer gradient-footer">
-
-    <div class="row text-center">
-
-        <div class="col-4">
-            <img src="{% static 'img/bt-logo.png' %}" class="footer-logo" alt="company logo">
-        </div>
-
-        <div class="col-4">
-            <p class="text-hero">Antred ® 2020</p>
-        </div>
-
-        <div class="col-4 justify-content-center">
-            <!-- Facebook -->
+<div class="row text-center">
+    <span class="col footer-logo-container">
+        <img src="{% static 'img/bt-logo.png' %}" class="footer-logo" alt="company logo">
+    </span>
+    <span class="col copyright-container">
+        <p class="text-hero">Antred ® 2020</p>
+    </span>
+    <span class="col footer-links">
+        <span class="footer-links-container">
             <a class="fb-ic" href="#">
-              <i class="fa fa-facebook"> </i>
+                <i class="fa fa-facebook"> </i>
             </a>
-
-            <!--Instagram-->
+        </span>
+        <span class="footer-links-container">
             <a class="ins-ic" href="#">
-              <i class="fa fa-instagram"> </i>
+                <i class="fa fa-instagram"> </i>
             </a>
-            
-            <!--Mail-->
+        </span>
+        <span class="footer-links-container">
             <a class="mail-ic" href="mailto:antredparis@gmail.com">
-              <i class="fa fa-envelope"></i>
+                <i class="fa fa-envelope"></i>
             </a>
-
-        </div>
-    </div>
-</footer>
-
+        </span>
+    </span>
+</div>
