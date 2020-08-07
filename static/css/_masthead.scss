@@ -1,0 +1,22 @@
+.carousel-item {
+  height: 20vh;
+  min-height: 250px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  @media #{$mq-small} {
+    height: 35vh;
+  }
+
+  @media #{$mq-large} {
+    height: 45vh;
+  }
+
+  @media #{$mq-xxlarge} {
+    height: 45vh;
+
+  }
+}

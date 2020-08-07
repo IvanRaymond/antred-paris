@@ -32,6 +32,7 @@ $header-line-height: 1.25;
 @import "../../node_modules/bootstrap/scss/bootstrap";
 @import "header";
 @import "footer";
+@import "masthead";
 
 body {
     font-size: $base-font-size;
@@ -88,7 +89,7 @@ body {
 }
 
 header {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .button:focus

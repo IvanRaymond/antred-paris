@@ -9924,12 +9924,6 @@ nav.navbar {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-@media (min-width: 48em) {
-  nav.navbar {
-    padding-bottom: 0;
-    padding-top: 0;
-  }
-}
 
 .nav-strip-figure {
   display: grid;
@@ -10040,6 +10034,31 @@ footer {
   margin-top: auto;
 }
 
+.carousel-item {
+  height: 20vh;
+  min-height: 250px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@media (min-width: 48em) {
+  .carousel-item {
+    height: 35vh;
+  }
+}
+@media (min-width: 85.375em) {
+  .carousel-item {
+    height: 45vh;
+  }
+}
+@media (min-width: 160em) {
+  .carousel-item {
+    height: 45vh;
+  }
+}
+
 body {
   font-size: 1em;
   line-height: 1.5;
@@ -10102,7 +10121,7 @@ body {
   src: local("hero-regular"), url("../fonts/hero-regular.ttf") format("truetype");
 }
 header {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 .button:focus {
