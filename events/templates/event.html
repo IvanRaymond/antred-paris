@@ -7,6 +7,7 @@
     document.addEventListener('DOMContentLoaded', function() {
         var eventClick = document.querySelector('.js-event-click');
         var calendarEl = document.getElementById('calendar');
+        //init
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
           themeSystem: 'bootstrap',
@@ -20,68 +21,67 @@
           },
           height: 625,
           showNonCurrentDates: false,
+          dateClick: function(info) {
+              console.log(info.date);
+          },
           eventClick: function(info) {
+              console.log(info.event);
               eventClick.innerHTML = "";
               info.jsEvent.preventDefault();
 
               var card = document.createElement('div');
               card.classList.add('card', 'mb-3');
-
               var row = document.createElement('div');
               row.classList.add('row', 'no-gutters');
-
               var col1 = document.createElement('div');
               col1.classList.add('col-md-4');
-
-              var img = document.createElement('img')
-              //img.src = info.event.extendedProps['img'];
-
+              var img = document.createElement('img');
+              img.classList.add('card-img');
+              img.src = info.event.extendedProps['img'];
               col1.appendChild(img);
-
               var col2 = document.createElement('div');
               col2.classList.add('col-md-8');
               var cardBody = document.createElement('div');
               cardBody.classList.add('card-body');
               var cardTitle = document.createElement('h5')
               cardTitle.innerHTML = info.event.title;
-
               var cardText = document.createElement('p');
               cardText.classList.add('card-text');
               cardText.innerHTML = info.event.extendedProps['description'];
-
               var cardDate = document.createElement('p');
               cardDate.classList.add('card-text');
               var small = document.createElement('small');
               small.classList.add('text-muted');
               small.innerText = info.event.start;
-
               cardDate.appendChild(small);
-
               cardBody.appendChild(cardTitle);
               cardBody.appendChild(cardText);
               cardBody.appendChild(cardDate);
-
               col2.appendChild(cardBody);
-
               row.appendChild(col1);
               row.appendChild(col2);
-
               card.appendChild(row);
-
               eventClick.appendChild(card);
           },
           events: [
               {% for event in events %}
               {
                   title: '{{ event.title }}',
-                  start: '{{ event.date|date:"Y-m-d" }}',
-                  end: '{{ event.date }}',
+                  start: '{{ event.date|date:"Y-m-d"}}{{ "T" }}{{ event.date|date:"H:i:00" }}',
+                  end: '{{ event.date|date:"Y-m-d"}}{{ "T" }}{{ event.date|date:"H:i:00" }}',
                   id: {{ event.id }},
                   img: '{{ event.images.url }}',
-                  description: '{{ event.description }}'
+                  description: '{{ event.description }}',
+                  allDay: false,
               },
               {% endfor %}
-          ]
+          ],
+          eventTimeFormat: { // like '14:30:00'
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          meridiem: false
+          }
         });
         calendar.render();
     });
@@ -95,21 +95,6 @@
 <br>
 
 <div class="js-event-click"></div>
-
-<div class="d-none card mb-3" style="max-width: 540px;">
-  <div class="row no-gutters">
-    <div class="col-md-4">
-      <img src="https://source.unsplash.com/RCAhiGJsUUE/1920x1080" class="card-img" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title"></h5>
-        <p class="card-text"></p>
-        <p class="card-text"><small class="text-muted"></small></p>
-      </div>
-    </div>
-  </div>
-</div>
 
 {% endblock %}
 
