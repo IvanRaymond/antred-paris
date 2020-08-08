@@ -23,8 +23,6 @@
           eventClick: function(info) {
               eventClick.innerHTML = "";
               info.jsEvent.preventDefault();
-              console.log(info.event.extendedProps['img']);
-              console.log(info.event.extendedProps['description']);
 
               var card = document.createElement('div');
               card.classList.add('card', 'mb-3');
@@ -36,7 +34,7 @@
               col1.classList.add('col-md-4');
 
               var img = document.createElement('img')
-              img.src = info.event.extendedProps['img'];
+              //img.src = info.event.extendedProps['img'];
 
               col1.appendChild(img);
 
