@@ -1,13 +1,33 @@
 from django.shortcuts import render
 from .form import ContactForm
-import os
+from events.models import Event
+import datetime
+from django.utils import timezone
 # Create your views here.
 
 
 def home_view(request):
+    queryset = Event.objects.all()
+    now = timezone.now()
+    next_event = None
+    last_event = None
+
+    for event in reversed(queryset):
+        if event.date >= now:
+            if next_event == None:
+                next_event = event
+            elif event.date <= next_event.date:
+                next_event = event
+        elif event.date < now:
+            if last_event == None:
+                last_event = event
+            elif event.date > last_event.date:
+                last_event = event
+
 
     context = {
-
+        "next_event": next_event,
+        "last_event": last_event
     }
     return render(request, "home.html", context)
 

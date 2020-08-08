@@ -11,15 +11,17 @@
     </ol>
     <div class="carousel-inner" role="listbox">
       <!-- Slide One - Set the background image for this slide in the line below -->
-      <div class="carousel-item active" style="background-image: url('https://source.unsplash.com/RCAhiGJsUUE/1920x1080')">
+      <div class="carousel-item active" style="background-image: url({{ last_event.images.url }})">
         <div class="carousel-caption">
           <p class="lead">Dernier évènement</p>
+            <p>{{ last_event.title }}</p>
         </div>
       </div>
       <!-- Slide Two - Set the background image for this slide in the line below -->
-      <div class="carousel-item" style="background-image: url('https://source.unsplash.com/wfh8dDlNFOk/1920x1080')">
+      <div class="carousel-item" style="background-image: url({{ next_event.images.url }})">
         <div class="carousel-caption">
           <p class="lead">Prochain évènement</p>
+            <p>{{ next_event.title }}</p>
         </div>
       </div>
       <!-- Slide Three - Set the background image for this slide in the line below -->
