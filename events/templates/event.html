@@ -5,39 +5,89 @@
 <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js'></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        themeSystem: 'bootstrap',
-        headerToolbar: {
-            start: 'title',
-            center: '',
-            end: 'today prevYear,prev,next,nextYear'
-        },
-        buttonText: {
-            today: 'aujourd\'hui'
-        },
-        height: 625,
-        showNonCurrentDates: false,
-          eventClick: function(info) {
-
+        var eventClick = document.querySelector('.js-event-click');
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          themeSystem: 'bootstrap',
+          headerToolbar: {
+              start: 'title',
+              center: '',
+              end: 'today prevYear,prev,next,nextYear'
           },
-        events: [
-            {% for event in events %}
-            {
-                title: '{{ event.title }}',
-                start: '{{ event.date|date:"Y-m-d" }}',
-                end: '{{ event.date }}',
-                id: {{ event.id }},
-                url: '{{ event.images.url }}',
-            },
-            {% endfor %}
-        ]
-      });
-      calendar.render();
+          buttonText: {
+              today: 'aujourd\'hui'
+          },
+          height: 625,
+          showNonCurrentDates: false,
+          eventClick: function(info) {
+              eventClick.innerHTML = "";
+              info.jsEvent.preventDefault();
+              console.log(info.event.extendedProps['img']);
+              console.log(info.event.extendedProps['description']);
+
+              var card = document.createElement('div');
+              card.classList.add('card', 'mb-3');
+
+              var row = document.createElement('div');
+              row.classList.add('row', 'no-gutters');
+
+              var col1 = document.createElement('div');
+              col1.classList.add('col-md-4');
+
+              var img = document.createElement('img')
+              img.src(info.event.extencdedProps['img']);
+
+              col1.appendChild(img);
+
+              var col2 = document.createElement('div');
+              col2.classList.add('col-md-8');
+              var cardBody = document.createElement('div');
+              cardBody.classList.add('card-body');
+              var cardTitle = document.createElement('h5')
+              h5.innerHTML = info.event.title;
+
+              var cardText = document.createElement('p');
+              cardText.classList.add('card-text');
+              cardText.innerHTML = info.event.description;
+
+              var cardDate = document.createElement('p');
+              cardDate.classList.add('card-text');
+              var small = document.createElement('small');
+              small.classList.add('text-muted');
+              small.innerText = info.event.start;
+
+              cardDate.appendChild(small);
+
+              cardBody.appendChild(cardTitle);
+              cardBody.appendChild(cardText);
+              cardBody.appendChild(cardDate);
+
+              col2.appendChild(cardBody);
+
+              row.appendChild(col1);
+              row.appendChild(col2);
+
+              card.appendChild(row);
+          },
+          events: [
+              {% for event in events %}
+              {
+                  title: '{{ event.title }}',
+                  start: '{{ event.date|date:"Y-m-d" }}',
+                  end: '{{ event.date }}',
+                  id: {{ event.id }},
+                  img: '{{ event.images.url }}',
+                  description: '{{ event.description }}'
+              },
+              {% endfor %}
+          ]
+        });
+        calendar.render();
     });
 </script>
 {% endblock %}
+
 
 
 {% block content %}
@@ -55,7 +105,7 @@
       <div class="card-body">
         <h5 class="card-title"></h5>
         <p class="card-text"></p>
-        <p class="card-text"><small class="text-muted card-date"></small></p>
+        <p class="card-text"><small class="text-muted"></small></p>
       </div>
     </div>
   </div>
