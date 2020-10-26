@@ -1,9 +1,2 @@
-# Ignore IDE files
-.DS_Store
-/.ionide
-/.idea
 
-
-# Env Files
-/antredenv
 
