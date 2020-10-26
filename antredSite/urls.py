@@ -17,12 +17,16 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views
 
 # Custom Pages
-
+from pages.form import LoginForm,ResetPasswordForm
 
 urlpatterns = [
     path('', include('pages.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+
+
     path('alumni/', include('alumni.urls')),
     path('admin/', admin.site.urls)
 ]

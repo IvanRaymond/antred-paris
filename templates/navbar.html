@@ -7,7 +7,10 @@
         </a>
     </div>
     <nav class="navbar navbar-expand-md">
-
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#collapsibleProfile">
+                <i class="fa fa-user h1-gradient" aria-hidden="true"></i>
+            </button>
 
             <!-- Brand -->
             <a class="navbar-brand d-lg-none d-xl-none d-md-none" href="#">
@@ -70,6 +73,35 @@
                         </figure>        
                     </a>
                 </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-md">
+        <!-- Profile section links -->
+        <div class="collapse navbar-collapse" id="collapsibleProfile">
+            <ul class="navbar-nav mr-auto">
+                {% if not request.user.is_authenticated  %}
+                {% url 'pages:login' as login_url %}
+                {% if request.path != login_url %}
+                <li class="nav-item">
+                    <a href="{% url 'login' %}" class="nav-link h2-gradient">Connexion</a>
+                </li>
+                {% endif %}
+                {% url 'pages:signup' as signup_url %}
+                {% if request.path != signup_url %}
+                <li class="nav-item">
+                    <a href="{% url 'pages:signup'%}" class="nav-link h2-gradient">Inscription</a>
+                </li>
+                {% endif %}
+                {% endif %}
+                {% if request.user.is_authenticated  %}
+                <li class="nav-item">
+                    <a href="{% url 'pages:profile' %}" class="nav-link h2-gradient">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'logout' %}" class="nav-link h2-gradient">Déconnexion</a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </nav>

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <meta http-equiv="REFRESH" content="0;url={% url 'pages:home' %}">
+{% endif %}
+
+{% if request.user.is_anonymous %}
+<div class="container">
+      {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+      {% endif %}
+
+      {% if next %}
+        {% if user.is_authenticated %}
+          <p>Your account doesn't have access to this page. To proceed,
+          please login with an account that has access.</p>
+        {% else %}
+          <p>Please login to see this page.</p>
+        {% endif %}
+      {% endif %}
+        <h2 class="h2-gradient">Connexion</h2>
+        <br>
+        <form method="post" action="{% url 'login' %}">
+        {% csrf_token %} {{ form|crispy }}
+
+            <br>
+            <button class="btn btn-primary" type="submit" value="login">Connexion</button>
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+
+      {# Assumes you setup the password_reset view in your URLconf #}
+        <br>
+      <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+    <br><br><br>
+</div>
+{% endif %}
+{% endblock %}
