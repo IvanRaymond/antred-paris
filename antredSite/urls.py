@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.conf.urls.static import static
 from django.conf import settings
-from django.conf.urls import url
-from information.views import information_view
+
 # Custom Pages
 
 
@@ -26,7 +25,8 @@ urlpatterns = [
     path('events/', include('events.urls')),
     path('members/', include('members.urls')),
     path('', include('pages.urls')),
-    path('information/', information_view, name='info'),
+    path('information/', include('information.urls')),
+    path('alumni/', include('alumni.urls')),
     path('admin/', admin.site.urls)
 ]
 

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'events',
     'information',
     'members',
+    'alumni',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -85,19 +86,16 @@ WSGI_APPLICATION = 'antredSite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-MONGO_PRIVATE_KEY = os.environ['MONGO_KEY']
-
 DATABASES = {
     'default': {
-        'ENGINE': 'djongo',
-        'CLIENT': {
-            'host': 'mongodb+srv://admin:' + MONGO_PRIVATE_KEY + '@antred-cluster.sm4io.azure.mongodb.net/test',
-            'username': 'admin',
-            'password': MONGO_PRIVATE_KEY,
-            'authMechanism': 'SCRAM-SHA-1'
-        }
-    }
-}
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'antred',
+         'USER': os.environ['DB_USER'],
+         'PASSWORD': os.environ['DB_KEY'],
+         'HOST': 'localhost',
+         'PORT': '',
+     }
+ }
 
 
 # Password validation
