@@ -22,10 +22,7 @@ from django.conf import settings
 
 
 urlpatterns = [
-    path('events/', include('events.urls')),
-    path('members/', include('members.urls')),
     path('', include('pages.urls')),
-    path('information/', include('information.urls')),
     path('alumni/', include('alumni.urls')),
     path('admin/', admin.site.urls)
 ]

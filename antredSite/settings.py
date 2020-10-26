@@ -44,9 +44,6 @@ INSTALLED_APPS = [
 
     # own
     'pages',
-    'events',
-    'information',
-    'members',
     'alumni',
 ]
 
