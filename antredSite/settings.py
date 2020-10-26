@@ -32,6 +32,10 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    # own
+    'pages',
+    'alumni',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,10 +45,6 @@ INSTALLED_APPS = [
 
     # third party
     'crispy_forms',
-
-    # own
-    'pages',
-    'alumni',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -151,3 +151,9 @@ EMAIL_PORT = 1025           #587
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = False       #True
+
+# Extended User Model
+AUTH_PROFILE_MODULE = "pages.Profile"
+
+# Login Redirect
+LOGIN_REDIRECT_URL = '/'

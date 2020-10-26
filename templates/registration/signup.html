@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="h2-gradient">Inscription</h2>
+  <br>
+  <form method="post">
+    {% csrf_token %} {{ form|crispy }}
+    <br>
+    <button class="btn btn-primary" type="submit">Inscription</button>
+  </form>
+<br><br><br>
+{% endblock %}
